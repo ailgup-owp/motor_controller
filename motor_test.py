@@ -97,7 +97,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
      if dev == "savox_button" :
       self.label_3.setText("Measured Position")
       self.label_6.setText("Set Position")
-      commands["go"]=0x2
+      commands["go"]=0x4
       commands["vel"]=0x9
       commands["get_vel"]=0xA
      else:
@@ -149,10 +149,10 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           on_bit=0x1
           #velocity control
         reg=[0,0,0,0]
-        reg[0] = (0x1 & 0xFF000000) >> 24
-        reg[1] = (0x1 & 0x00FF0000) >> 16
-        reg[2] = (0x1 & 0x0000FF00) >> 8
-        reg[3] = (0x1 & 0x000000FF) >> 0
+        reg[0] = (on_bit & 0xFF000000) >> 24
+        reg[1] = (on_bit & 0x00FF0000) >> 16
+        reg[2] = (on_bit & 0x0000FF00) >> 8
+        reg[3] = (on_bit & 0x000000FF) >> 0
         print("I2C",devices[dev][0], commands["go"], reg)
         try:
           bus.write_i2c_block_data(devices[dev][0], commands["go"], reg)
