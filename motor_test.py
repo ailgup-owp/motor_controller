@@ -125,6 +125,10 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           reg[2] = (8000 & 0x0000FF00) >> 8;
           reg[3] = (8000 & 0x000000FF) >> 0;
           print("I2C",devices[dev][0], 0x7, reg)
+          try:
+            bus.write_i2c_block_data(devices[dev][0], 0x07, reg)
+          except OSError:
+            pass
           #set accel for position control to 1000
           reg=[0,0,0,0]
           reg[0] = (1000 & 0xFF000000) >> 24;
@@ -132,6 +136,10 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           reg[2] = (1000 & 0x0000FF00) >> 8;
           reg[3] = (1000 & 0x000000FF) >> 0;
           print("I2C",devices[dev][0], 0x5, reg)
+          try:
+            bus.write_i2c_block_data(devices[dev][0], 0x05, reg)
+          except OSError:
+            pass
           #set decel for position control to 1000
           reg=[0,0,0,0]
           reg[0] = (1000 & 0xFF000000) >> 24;
@@ -139,10 +147,11 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           reg[2] = (1000 & 0x0000FF00) >> 8;
           reg[3] = (1000 & 0x000000FF) >> 0;
           print("I2C",devices[dev][0], 0x6, reg)
-        try:
-          bus.write_i2c_block_data(devices[dev][0], commands["vel"], reg)
-        except OSError:
-          pass
+          try:
+            bus.write_i2c_block_data(devices[dev][0], 0x06, reg)
+          except OSError:
+            pass
+        
         if dev == "savox_button":
           on_bit=0x2
           #position control
