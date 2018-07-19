@@ -97,7 +97,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
      if dev == "savox_button" :
       self.label_3.setText("Measured Position")
       self.label_6.setText("Set Position")
-      commands["go"]=commands["go"]-1
+      commands["go"]=0x2
       commands["vel"]=0x9
       commands["get_vel"]=0xA
      else:
