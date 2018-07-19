@@ -85,14 +85,24 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
  def send_i2c_command(self,dev,cmd):
      # name : [address,forward,reverse,off,set_vel]
      devices={"falcon_button":[0x12],
+               "savox_button":[0x13],
                "br_button":[0x30],
                "m100_button":[0x32],
                "maxon_button":[0x31]}
      commands={"go":0x04,"vel":0x07,"get_vel":0x08}
-     if dev != "falcon_button":
+     if dev != "falcon_button" :
       commands["go"]=commands["go"]-1
       commands["vel"]=commands["vel"]-1
       commands["get_vel"]=commands["get_vel"]-1
+     if dev == "savox_button" :
+      self.label_3.setText("Measured Position")
+      self.label_6.setText("Set Position")
+      commands["go"]=commands["go"]-1
+      commands["vel"]=0x9
+      commands["get_vel"]=0xA
+     else:
+      self.label_3.setText("Measured Velocity")
+      self.label_6.setText("Set Velocity")
      if cmd=="forward":
         #set negative vel
         reg=[0,0,0,0]
@@ -107,6 +117,37 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
         except OSError:
           pass
         #turn on
+        if dev == "savox_button" :
+          #set velocity for position control to 8000
+          reg=[0,0,0,0]
+          reg[0] = (8000 & 0xFF000000) >> 24;
+          reg[1] = (8000 & 0x00FF0000) >> 16;
+          reg[2] = (8000 & 0x0000FF00) >> 8;
+          reg[3] = (8000 & 0x000000FF) >> 0;
+          print("I2C",devices[dev][0], 0x7, reg)
+          #set accel for position control to 1000
+          reg=[0,0,0,0]
+          reg[0] = (1000 & 0xFF000000) >> 24;
+          reg[1] = (1000 & 0x00FF0000) >> 16;
+          reg[2] = (1000 & 0x0000FF00) >> 8;
+          reg[3] = (1000 & 0x000000FF) >> 0;
+          print("I2C",devices[dev][0], 0x5, reg)
+          #set decel for position control to 1000
+          reg=[0,0,0,0]
+          reg[0] = (1000 & 0xFF000000) >> 24;
+          reg[1] = (1000 & 0x00FF0000) >> 16;
+          reg[2] = (1000 & 0x0000FF00) >> 8;
+          reg[3] = (1000 & 0x000000FF) >> 0;
+          print("I2C",devices[dev][0], 0x6, reg)
+        try:
+          bus.write_i2c_block_data(devices[dev][0], commands["vel"], reg)
+        except OSError:
+          pass
+          on_bit=0x2
+          #position control
+        else:
+          on_bit=0x1
+          #velocity control
         reg=[0,0,0,0]
         reg[0] = (0x1 & 0xFF000000) >> 24
         reg[1] = (0x1 & 0x00FF0000) >> 16
