@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.maxon_button, 0, 5, 1, 1)
         self.savox_button = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.savox_button.setMinimumSize(QtCore.QSize(0, 60))
-        self.savox_button.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.savox_button.setMaximumSize(QtCore.QSize(80, 16777215))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.savox_button.setFont(font)
@@ -182,11 +182,15 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.br_button.setText(_translate("MainWindow", "Blue Robo"))
-        self.falcon_button.setText(_translate("MainWindow", "Falcon"))
+        self.br_button.setText(_translate("MainWindow", "Blue\n"
+"Robotics"))
+        self.falcon_button.setText(_translate("MainWindow", "Falcon\n"
+"Pump"))
         self.m100_button.setText(_translate("MainWindow", "M100"))
-        self.maxon_button.setText(_translate("MainWindow", "Maxon Sensorless"))
-        self.savox_button.setText(_translate("MainWindow", "Falcon (Savox)"))
+        self.maxon_button.setText(_translate("MainWindow", "Maxon\n"
+"Sensorless"))
+        self.savox_button.setText(_translate("MainWindow", "Falcon\n"
+"Savox"))
         self.label_3.setText(_translate("MainWindow", "Measured Velocity:"))
         self.measured_velocity.setText(_translate("MainWindow", "TextLabel"))
         self.motor_name.setText(_translate("MainWindow", "Falcon"))

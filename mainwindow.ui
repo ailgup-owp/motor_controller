@@ -65,7 +65,8 @@
         </font>
        </property>
        <property name="text">
-        <string>Blue Robo</string>
+        <string>Blue
+Robotics</string>
        </property>
       </widget>
      </item>
@@ -98,7 +99,8 @@
         <string notr="true">QPushButton{color:blue};</string>
        </property>
        <property name="text">
-        <string>Falcon</string>
+        <string>Falcon
+Pump</string>
        </property>
       </widget>
      </item>
@@ -146,7 +148,8 @@
         </font>
        </property>
        <property name="text">
-        <string>Maxon Sensorless</string>
+        <string>Maxon
+Sensorless</string>
        </property>
       </widget>
      </item>
@@ -160,7 +163,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>150</width>
+         <width>80</width>
          <height>16777215</height>
         </size>
        </property>
@@ -170,7 +173,8 @@
         </font>
        </property>
        <property name="text">
-        <string>Falcon (Savox)</string>
+        <string>Falcon
+Savox</string>
        </property>
       </widget>
      </item>
