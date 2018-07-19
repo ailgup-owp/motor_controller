@@ -176,6 +176,7 @@ class Ui_MainWindow(object):
         self.br_button.pressed.connect(MainWindow.button_handler)
         self.m100_button.pressed.connect(MainWindow.button_handler)
         self.maxon_button.pressed.connect(MainWindow.button_handler)
+        self.savox_button.pressed.connect(MainWindow.button_handler)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

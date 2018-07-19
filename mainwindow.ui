@@ -456,8 +456,8 @@
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>176</x>
-     <y>16</y>
+     <x>359</x>
+     <y>17</y>
     </hint>
     <hint type="destinationlabel">
      <x>119</x>
@@ -472,8 +472,8 @@
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>323</x>
-     <y>15</y>
+     <x>444</x>
+     <y>16</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
@@ -494,6 +494,22 @@
     <hint type="destinationlabel">
      <x>314</x>
      <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>savox_button</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>button_handler()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>333</x>
+     <y>64</y>
     </hint>
    </hints>
   </connection>
