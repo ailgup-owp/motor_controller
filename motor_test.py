@@ -143,6 +143,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           bus.write_i2c_block_data(devices[dev][0], commands["vel"], reg)
         except OSError:
           pass
+        if dev = "savox_button":
           on_bit=0x2
           #position control
         else:
