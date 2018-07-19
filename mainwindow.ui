@@ -61,7 +61,7 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
@@ -92,7 +92,7 @@ Robotics</string>
        </property>
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -120,7 +120,7 @@ Pump</string>
        </property>
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
@@ -144,7 +144,7 @@ Pump</string>
        </property>
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
@@ -169,7 +169,7 @@ Sensorless</string>
        </property>
        <property name="font">
         <font>
-         <pointsize>16</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
