@@ -1,5 +1,5 @@
 cd /home/pi/motor_tester
-while ! ping -c 1 -W 8.8.8.8; do
+while ! ping -c 1 -W 1 8.8.8.8; do
     echo "Waiting ..."
     sleep 1
 done
