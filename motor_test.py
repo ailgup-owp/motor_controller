@@ -103,11 +103,14 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
       commands["get_vel"]=0xA
       on_bit=0x2
       #set velocity for position control to 8000
+      dir_bit=1
+      if cmd=="reverse":
+        dir_bit=-1
       reg=[0,0,0,0]
-      reg[0] = (8000 & 0xFF000000) >> 24;
-      reg[1] = (8000 & 0x00FF0000) >> 16;
-      reg[2] = (8000 & 0x0000FF00) >> 8;
-      reg[3] = (8000 & 0x000000FF) >> 0;
+      reg[0] = ((dir_bit*8000) & 0xFF000000) >> 24;
+      reg[1] = ((dir_bit*8000) & 0x00FF0000) >> 16;
+      reg[2] = ((dir_bit*8000) & 0x0000FF00) >> 8;
+      reg[3] = ((dir_bit*8000) & 0x000000FF) >> 0;
       print("I2C",devices[dev][0], 0x7, reg)
       try:
         bus.write_i2c_block_data(devices[dev][0], 0x07, reg)
