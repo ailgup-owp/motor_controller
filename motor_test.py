@@ -41,7 +41,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
      if self.active_state == "stop_button":
          eval("self.%s.setStyleSheet(\"\")" % self.active_motor)
          eval("self.%s.setStyleSheet(\"QPushButton{color: blue}\")" % motor)
-         if motor=="falcon_button":
+         if motor=="falcon_button" or motor == "savox_button":
           self.vel_up.setEnabled(True)
           self.vel_down.setEnabled(True)
           self.forward_button.setText("Forward")
