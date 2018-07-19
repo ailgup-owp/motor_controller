@@ -75,7 +75,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
  def motor_loop(self):
      while (self.running):
          self.measured_velocity.setText(str(self.motor_get_velocity))
-         if self.active_motor == "falcon_button":
+         if self.active_motor == "falcon_button" or self.active_motor=="savox_motor":
           self.set_velocity_label.setText(str(self.motor_set_velocity))
          else:
           self.set_velocity_label.setText("--")
