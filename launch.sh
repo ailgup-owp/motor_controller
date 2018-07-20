@@ -11,6 +11,6 @@ git fetch --all
 
 git reset --hard origin/master
 
-chmod +x /home/pi/motor_tester/launch.sh
+sudo chmod +x /home/pi/motor_tester/launch.sh
 
 python3 /home/pi/motor_tester/motor_test.py &
