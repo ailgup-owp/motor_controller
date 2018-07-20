@@ -1,4 +1,3 @@
-cd /home/pi/motor_tester
 
 while ! ping -c 1 -W 1 8.8.8.8; do
 
@@ -7,9 +6,9 @@ while ! ping -c 1 -W 1 8.8.8.8; do
     sleep 1
 
     done
-git fetch --all
+git -C /home/pi/motor_tester fetch --all
 
-git reset --hard origin/master
+git -C /home/pi/motor_tester reset --hard origin/master
 
 sudo chmod +x /home/pi/motor_tester/launch.sh
 
