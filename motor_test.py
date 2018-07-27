@@ -6,7 +6,6 @@ except:
     pass
 from PyQt5.QtWidgets import *
 
-import mainwindow
 import socket
 import fcntl
 
