@@ -66,6 +66,12 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
  def down_velocity(self):
      self.motor_set_velocity=self.motor_set_velocity-100
      self.send_i2c_command(self.active_motor,"vel")
+ def up_velocity_10(self):
+     self.motor_set_velocity=self.motor_set_velocity+10
+     self.send_i2c_command(self.active_motor,"vel")
+ def down_velocity_10(self):
+     self.motor_set_velocity=self.motor_set_velocity-10
+     self.send_i2c_command(self.active_motor,"vel")
 
  def set_motor_state(self):
      state=self.sender().objectName()
