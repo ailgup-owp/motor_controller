@@ -7,14 +7,23 @@ except:
 from PyQt5.QtWidgets import *
 
 import mainwindow
+import socket
+import fcntl
 
 """
-Motor 1: M100
-Motor 2: Blue Robotics
+Motor 1: Blue Robotics 1
+Motor 2: Blue Robotics 2
 Motor 3: Maxon Sensorless
 
 """
 
+def get_ip_address(ifname):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    return socket.inet_ntoa(fcntl.ioctl(
+        s.fileno(),
+        0x8915,  # SIOCGIFADDR
+        struct.pack('256s', ifname[:15])
+    )[20:24])
 class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
  # access variables inside of the UI's file
  def __init__(self):
@@ -28,7 +37,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
      self.motor_set_velocity=1000
      self.motor_get_velocity=0
      self.running = True
-
+     self.statusBar.showMessage(get_ip_address('wlan0'))
      vel_loop = threading.Thread(target=self.motor_loop,args=[])
      vel_loop.start()
 
@@ -91,10 +100,10 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
                "maxon_button":[0x31]}
      commands={"go":0x04,"vel":0x07,"get_vel":0x08}
      on_bit = 0x1
-     if dev != "falcon_button" :
-      commands["go"]=commands["go"]-1
-      commands["vel"]=commands["vel"]-1
-      commands["get_vel"]=commands["get_vel"]-1
+     #if dev != "falcon_button" :
+     # commands["go"]=commands["go"]-1
+     # commands["vel"]=commands["vel"]-1
+     # commands["get_vel"]=commands["get_vel"]-1
      if dev == "savox_button" :
       self.label_3.setText("Measured Position")
       self.label_6.setText("Set Position")
