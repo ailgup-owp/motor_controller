@@ -7,7 +7,10 @@ except:
 from PyQt5.QtWidgets import *
 
 import socket
-import fcntl
+try:
+  import fcntl
+except:
+  pass
 import mainwindow
 """
 Motor 1: Blue Robotics 1
@@ -49,11 +52,15 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
          if motor=="falcon_button" or motor == "savox_button":
           self.vel_up.setEnabled(True)
           self.vel_down.setEnabled(True)
+          self.vel_up_10.setEnabled(True)
+          self.vel_down_10.setEnabled(True)
           self.forward_button.setText("Forward")
           self.reverse_button.setText("Reverse")
          else:
           self.vel_up.setEnabled(False)
           self.vel_down.setEnabled(False)
+          self.vel_up_10.setEnabled(False)
+          self.vel_down_10.setEnabled(False)
           self.forward_button.setText("Expulsion")
           self.reverse_button.setText("Ingestion")
          self.motor_name.setText(str(motor.split("_")[0]).upper())
@@ -167,8 +174,6 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
         except OSError:
           pass
         #turn on
-        
-        
         
         reg=[0,0,0,0]
         reg[0] = (on_bit & 0xFF000000) >> 24
