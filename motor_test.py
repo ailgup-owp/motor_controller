@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import *
 
 import socket
 import fcntl
-
+import mainwindow
 """
 Motor 1: Blue Robotics 1
 Motor 2: Blue Robotics 2
