@@ -18,11 +18,8 @@ Motor 3: Maxon Sensorless
 
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    return socket.inet_ntoa(fcntl.ioctl(
-        s.fileno(),
-        0x8915,  # SIOCGIFADDR
-        struct.pack('256s', ifname[:15])
-    )[20:24])
+    s.connect(('8.8.8.8', 0))
+    return str(s.getsockname()[0])
 class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
  # access variables inside of the UI's file
  def __init__(self):
