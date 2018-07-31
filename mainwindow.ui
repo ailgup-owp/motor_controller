@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>320</width>
+    <height>240</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>640</width>
-    <height>480</height>
+    <width>320</width>
+    <height>240</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>99999</width>
-    <height>99999</height>
+    <width>320</width>
+    <height>400</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -35,41 +35,19 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
-      <width>621</width>
-      <height>62</height>
+      <width>321</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <property name="spacing">
       <number>5</number>
      </property>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="br_button">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>120</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>15</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Blue
-Robotics</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="falcon_button">
        <property name="sizePolicy">
@@ -81,18 +59,18 @@ Robotics</string>
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>80</width>
+         <width>999</width>
          <height>16777215</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <pointsize>7</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -104,52 +82,53 @@ Pump</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="4">
-      <widget class="QPushButton" name="m100_button">
+     <item row="0" column="3">
+      <widget class="QPushButton" name="br_button">
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>80</width>
+         <width>999</width>
          <height>16777215</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <pointsize>7</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>M100</string>
+        <string>Blue
+Robotics</string>
        </property>
       </widget>
      </item>
      <item row="0" column="5">
-      <widget class="QPushButton" name="maxon_button">
+      <widget class="QPushButton" name="br2_button">
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>999</width>
          <height>16777215</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <pointsize>7</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Maxon
-Sensorless</string>
+        <string>Blue 
+Robotics 2</string>
        </property>
       </widget>
      </item>
@@ -158,18 +137,18 @@ Sensorless</string>
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>60</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>80</width>
+         <width>999</width>
          <height>16777215</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <pointsize>7</pointsize>
         </font>
        </property>
        <property name="text">
@@ -178,25 +157,163 @@ Savox</string>
        </property>
       </widget>
      </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="maxon_button">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>999</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Maxon
+Sensorless</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>621</width>
-      <height>381</height>
+      <x>0</x>
+      <y>44</y>
+      <width>321</width>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="1" column="1">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinimumSize</enum>
+     </property>
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QPushButton" name="forward_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Forward</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="reverse_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Reverse</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="stop_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{color:red};</string>
+         </property>
+         <property name="text">
+          <string>Stop</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="motor_name">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Falcon</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QLabel" name="label_3">
          <property name="font">
           <font>
-           <pointsize>16</pointsize>
+           <pointsize>10</pointsize>
           </font>
          </property>
          <property name="text">
@@ -211,7 +328,7 @@ Savox</string>
         <widget class="QLabel" name="measured_velocity">
          <property name="font">
           <font>
-           <pointsize>40</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="text">
@@ -224,46 +341,19 @@ Savox</string>
        </item>
       </layout>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="motor_name">
-       <property name="font">
-        <font>
-         <pointsize>35</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Falcon</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="forward_button">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>50</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Forward</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
+     <item row="1" column="1">
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QLabel" name="label_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>15</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>16</pointsize>
+           <pointsize>10</pointsize>
           </font>
          </property>
          <property name="text">
@@ -276,9 +366,15 @@ Savox</string>
        </item>
        <item>
         <widget class="QLabel" name="set_velocity_label">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>99999</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>40</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="text">
@@ -291,61 +387,117 @@ Savox</string>
        </item>
       </layout>
      </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="stop_button">
-       <property name="font">
-        <font>
-         <pointsize>50</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{color:red};</string>
-       </property>
-       <property name="text">
-        <string>Stop</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="reverse_button">
-       <property name="font">
-        <font>
-         <pointsize>50</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Reverse</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="vel_up">
-         <property name="font">
-          <font>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>^</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="vel_up">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>⇈</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="vel_up_10">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>↑</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="vel_down">
-         <property name="font">
-          <font>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>v</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="vel_down">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>⇊</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="vel_down_10">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>↓</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -396,8 +548,8 @@ Savox</string>
    <slot>up_velocity()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>397</y>
+     <x>96</x>
+     <y>395</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
@@ -460,8 +612,8 @@ Savox</string>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>359</x>
-     <y>17</y>
+     <x>327</x>
+     <y>18</y>
     </hint>
     <hint type="destinationlabel">
      <x>119</x>
@@ -470,14 +622,14 @@ Savox</string>
    </hints>
   </connection>
   <connection>
-   <sender>m100_button</sender>
+   <sender>br2_button</sender>
    <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>16</y>
+     <x>421</x>
+     <y>17</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
@@ -508,12 +660,44 @@ Savox</string>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>223</x>
-     <y>39</y>
+     <x>193</x>
+     <y>40</y>
     </hint>
     <hint type="destinationlabel">
      <x>333</x>
      <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vel_up_10</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>up_velocity_10()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>429</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>138</x>
+     <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vel_down_10</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>down_velocity_10()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>460</y>
     </hint>
    </hints>
   </connection>
@@ -525,5 +709,7 @@ Savox</string>
   <slot>set_motor_state()</slot>
   <slot>up_velocity()</slot>
   <slot>down_velocity()</slot>
+  <slot>down_velocity_10()</slot>
+  <slot>up_velocity_10()</slot>
  </slots>
 </ui>
