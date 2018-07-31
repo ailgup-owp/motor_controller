@@ -111,7 +111,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
      devices={"falcon_button":[0x12],
                "savox_button":[0x13],
                "br_button":[0x30],
-               "m100_button":[0x32],
+               "br2_button":[0x32],
                "maxon_button":[0x31]}
      commands={"go":0x04,"vel":0x07,"get_vel":0x08}
      on_bit = 0x1
