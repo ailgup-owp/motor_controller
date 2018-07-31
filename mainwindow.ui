@@ -45,8 +45,11 @@
      <property name="sizeConstraint">
       <enum>QLayout::SetDefaultConstraint</enum>
      </property>
-     <property name="spacing">
-      <number>5</number>
+     <property name="horizontalSpacing">
+      <number>2</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>0</number>
      </property>
      <item row="0" column="1">
       <widget class="QPushButton" name="falcon_button">
@@ -100,6 +103,9 @@ Pump</string>
         <font>
          <pointsize>7</pointsize>
         </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
         <string>Blue
@@ -188,17 +194,23 @@ Sensorless</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>44</y>
+      <y>33</y>
       <width>321</width>
-      <height>151</height>
+      <height>141</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <property name="sizeConstraint">
       <enum>QLayout::SetMinimumSize</enum>
      </property>
+     <property name="spacing">
+      <number>2</number>
+     </property>
      <item row="0" column="0">
       <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>2</number>
+       </property>
        <item>
         <widget class="QPushButton" name="forward_button">
          <property name="sizePolicy">
@@ -216,7 +228,7 @@ Sensorless</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>25</height>
+           <height>999</height>
           </size>
          </property>
          <property name="font">
@@ -240,7 +252,7 @@ Sensorless</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>25</height>
+           <height>999</height>
           </size>
          </property>
          <property name="font">
@@ -264,7 +276,7 @@ Sensorless</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>25</height>
+           <height>999</height>
           </size>
          </property>
          <property name="font">
@@ -389,8 +401,14 @@ Sensorless</string>
      </item>
      <item row="1" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>2</number>
+       </property>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
          <item>
           <widget class="QPushButton" name="vel_up">
            <property name="sizePolicy">
@@ -408,7 +426,7 @@ Sensorless</string>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>20</height>
+             <height>999</height>
             </size>
            </property>
            <property name="font">
@@ -432,7 +450,7 @@ Sensorless</string>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>20</height>
+             <height>999</height>
             </size>
            </property>
            <property name="font">
@@ -449,6 +467,9 @@ Sensorless</string>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>2</number>
+         </property>
          <item>
           <widget class="QPushButton" name="vel_down">
            <property name="sizePolicy">
@@ -460,7 +481,7 @@ Sensorless</string>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>20</height>
+             <height>999</height>
             </size>
            </property>
            <property name="font">
@@ -484,7 +505,7 @@ Sensorless</string>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>20</height>
+             <height>999</height>
             </size>
            </property>
            <property name="font">
