@@ -88,13 +88,13 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
          self.send_i2c_command(self.active_motor,state.split("_")[0])
          self.active_state=state
  def get_motor_velocity(self):
-     speed=self.send_i2c_command(self.active_motor,"getv")
-     self.measured_velocity.setText(str(speed))
+     self.motor_get_velocity=self.send_i2c_command(self.active_motor,"getv")
+     self.measured_velocity.setText(str(self.motor_get_velocity))
  def motor_loop(self):
      while (self.running):
          self.get_motor_velocity()
          if self.active_motor == "falcon_button" or self.active_motor=="savox_button":
-          self.set_velocity_label.setText(str(self.motor_set_velocity))
+          self.motor_get_velocity.setText(str(self.motor_set_velocity))
           if self.active_motor=="savox_button" and (self.active_state=="forward_button" or self.active_state=="reverse_button"):
             if abs(self.measured_velocity) == abs(self.motor_set_velocity):
               eval("self.%s.setStyleSheet(\"\")" % self.active_state)
