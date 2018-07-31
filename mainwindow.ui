@@ -196,7 +196,7 @@ Sensorless</string>
       <x>0</x>
       <y>33</y>
       <width>321</width>
-      <height>141</height>
+      <height>146</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -233,7 +233,7 @@ Sensorless</string>
          </property>
          <property name="font">
           <font>
-           <pointsize>18</pointsize>
+           <pointsize>15</pointsize>
           </font>
          </property>
          <property name="text">
@@ -257,7 +257,7 @@ Sensorless</string>
          </property>
          <property name="font">
           <font>
-           <pointsize>18</pointsize>
+           <pointsize>15</pointsize>
           </font>
          </property>
          <property name="text">
@@ -281,7 +281,7 @@ Sensorless</string>
          </property>
          <property name="font">
           <font>
-           <pointsize>18</pointsize>
+           <pointsize>15</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -431,11 +431,11 @@ Sensorless</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>12</pointsize>
+             <pointsize>9</pointsize>
             </font>
            </property>
            <property name="text">
-            <string>⇈</string>
+            <string>⇈ (+100)</string>
            </property>
           </widget>
          </item>
@@ -455,11 +455,11 @@ Sensorless</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>12</pointsize>
+             <pointsize>9</pointsize>
             </font>
            </property>
            <property name="text">
-            <string>↑</string>
+            <string>↑ (+10)</string>
            </property>
           </widget>
          </item>
@@ -486,11 +486,11 @@ Sensorless</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>12</pointsize>
+             <pointsize>9</pointsize>
             </font>
            </property>
            <property name="text">
-            <string>⇊</string>
+            <string>⇊ (-100)</string>
            </property>
           </widget>
          </item>
@@ -510,11 +510,11 @@ Sensorless</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>10</pointsize>
+             <pointsize>9</pointsize>
             </font>
            </property>
            <property name="text">
-            <string>↓</string>
+            <string>↓ (-10)</string>
            </property>
           </widget>
          </item>
