@@ -39,7 +39,7 @@ class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
       e=bus.read_i2c_block_data(self.i2c_address, command, 4)
       if command>=0x80:
         (spd,)=struct.unpack('>f',bytearray(e))
-        spd="{0:.2f}".format(round(spd),2)
+        spd="{0:.4f}".format(round(spd),2)
       else:
         (spd,)=struct.unpack('>l',bytearray(e))
     except OSError:
