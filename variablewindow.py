@@ -208,9 +208,6 @@ class Ui_varWin(object):
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         varWin.setCentralWidget(self.centralWidget)
-        self.statusBar = QtWidgets.QStatusBar(varWin)
-        self.statusBar.setObjectName("statusBar")
-        varWin.setStatusBar(self.statusBar)
 
         self.retranslateUi(varWin)
         self.pushButton.clicked.connect(varWin.exit_window)

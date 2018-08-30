@@ -254,6 +254,9 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addLayout(self.verticalLayout_2, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralWidget)
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.statusBar.setFont(font)
         self.statusBar.setObjectName("statusBar")
         MainWindow.setStatusBar(self.statusBar)
 

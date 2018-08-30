@@ -52,7 +52,7 @@ class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
        labels=["mv","dc","mc","fw","kp","ki","kd"]
        for r in range(len(registers)):
             val=self.get_reg(registers[r])
-            if labels[r] == "fw":
+            if labels[r] == "fw" && val != "---":
               revision = (int(val) & 0xFFFFFFFC) >> 2;
               addStr=""
               revisionRange = (int(val) & 0x02) >> 1;
@@ -273,7 +273,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           pass
      elif cmd == "getv":
         try:
-          bus.write_i2c_block_data(devices[dev][0], commands["get_vel"], [0])
+          bus.write_byte(devices[dev][0], commands["get_vel"])
           e=bus.read_i2c_block_data(devices[dev][0],commands["get_vel"],4)
           (spd,)=struct.unpack('>l',bytearray(e))
         except OSError:
