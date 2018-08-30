@@ -12,6 +12,7 @@ try:
 except:
   pass
 import mainwindow
+import variablewindow
 """
 Motor 1: Blue Robotics 1
 Motor 2: Blue Robotics 2
@@ -23,23 +24,64 @@ def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(('8.8.8.8', 0))
     return str(s.getsockname()[0])
+class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
+  def __init__(self):
+    super(self.__class__, self).__init__()
+    self.setupUi(self) # gets defined in the UI file
+    self.running=False
+    self.i2c_address=0x12
+  def exit_window(self):
+    self.running=False
+    self.close()
+  def get_reg(self,command):
+    try:
+      bus.write_i2c_block_data(self.i2c_address, command, [0])
+      e=bus.read_i2c_block_data(self.i2c_address, command, 4)
+      if command==0x86:
+        (spd,)=struct.unpack('>f',bytearray(e))
+        spd="{0:.2f}".format(round(spd),2)
+      else:
+        (spd,)=struct.unpack('>l',bytearray(e))
+    except OSError:
+      #Cannot read from device
+      return "---"
+    return str(spd)
+  def update_variables(self):
+    while (self.running):
+       registers=[0x08,0x86,0x0D,0x0C,0x01]
+       labels=["mv","dc","mc","mvo","fw"]
+       for r in range(len(registers)):
+            val=self.get_reg(registers[r])
+            if labels[r] == "fw":
+              revision = (int(val) & 0xFFFFFFFC) >> 2;
+              revisionRange = (int(val) & 0x02) >> 1;
+              modified = int(val) & 0x01;
+              val=str(revision)+","+str(revisionRange)+","+str(modified)
+            eval("self.%s.setText('%s')" % (labels[r],val))
+       time.sleep(1)
+    
 class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
  # access variables inside of the UI's file
  def __init__(self):
      super(self.__class__, self).__init__()
      self.setupUi(self) # gets defined in the UI file
      self.setCursor(PyQt5.QtCore.Qt.BlankCursor)
-
+     self.var_win = VariableWindow()
 
      self.active_motor="falcon_button"
      self.active_state="stop_button"
-     self.motor_set_velocity=1000
+     self.motor_set_velocity=2200
      self.motor_get_velocity=0
      self.running = True
      self.statusBar.showMessage(get_ip_address('wlan0'))
      vel_loop = threading.Thread(target=self.motor_loop,args=[])
      vel_loop.start()
 
+ def open_var_win(self):
+     self.var_win.running=True
+     var_loop = threading.Thread(target=self.var_win.update_variables,args=[])
+     var_loop.start()
+     self.var_win.showFullScreen()
  def button_handler(self):
      print(self.sender().objectName())
      if self.sender().objectName() != self.active_motor:
