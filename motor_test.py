@@ -49,7 +49,7 @@ class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
   def update_variables(self):
     while (self.running):
        registers=[0x08,0x86,0x0D,0x01,0x80,0x81,0x82]
-       labels=["mv","dc","mc",","fw","kp","ki","kd"]
+       labels=["mv","dc","mc","fw","kp","ki","kd"]
        for r in range(len(registers)):
             val=self.get_reg(registers[r])
             if labels[r] == "fw":
