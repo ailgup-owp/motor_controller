@@ -196,7 +196,7 @@ Sensorless</string>
       <x>0</x>
       <y>33</y>
       <width>321</width>
-      <height>144</height>
+      <height>131</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">

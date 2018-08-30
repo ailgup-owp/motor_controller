@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.maxon_button.setObjectName("maxon_button")
         self.gridLayout.addWidget(self.maxon_button, 0, 4, 1, 1)
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralWidget)
-        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, 33, 321, 144))
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, 33, 321, 131))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)

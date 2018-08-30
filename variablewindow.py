@@ -22,7 +22,7 @@ class Ui_varWin(object):
         self.centralWidget = QtWidgets.QWidget(varWin)
         self.centralWidget.setObjectName("centralWidget")
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralWidget)
-        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, -2, 321, 182))
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, -2, 311, 182))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
