@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'variablewindow.ui'
@@ -214,4 +215,3 @@ class Ui_varWin(object):
         self.label_18.setText(_translate("varWin", "mA"))
         self.pushButton.setText(_translate("varWin", "Exit"))
         self.label_16.setText(_translate("varWin", "rpm"))
-

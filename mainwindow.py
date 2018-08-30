@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
@@ -289,4 +290,3 @@ class Ui_MainWindow(object):
         self.vel_up_10.setText(_translate("MainWindow", "↑ (+10)"))
         self.vel_down.setText(_translate("MainWindow", "⇊ (-100)"))
         self.vel_down_10.setText(_translate("MainWindow", "↓ (-10)"))
-
