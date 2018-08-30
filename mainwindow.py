@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
@@ -79,7 +78,7 @@ class Ui_MainWindow(object):
         self.maxon_button.setObjectName("maxon_button")
         self.gridLayout.addWidget(self.maxon_button, 0, 4, 1, 1)
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.centralWidget)
-        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, 33, 321, 151))
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, 33, 321, 144))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
@@ -98,7 +97,7 @@ class Ui_MainWindow(object):
         self.forward_button.setMinimumSize(QtCore.QSize(0, 0))
         self.forward_button.setMaximumSize(QtCore.QSize(16777215, 999))
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setPointSize(13)
         self.forward_button.setFont(font)
         self.forward_button.setObjectName("forward_button")
         self.verticalLayout_5.addWidget(self.forward_button)
@@ -110,7 +109,7 @@ class Ui_MainWindow(object):
         self.reverse_button.setSizePolicy(sizePolicy)
         self.reverse_button.setMaximumSize(QtCore.QSize(16777215, 999))
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setPointSize(13)
         self.reverse_button.setFont(font)
         self.reverse_button.setObjectName("reverse_button")
         self.verticalLayout_5.addWidget(self.reverse_button)
@@ -122,7 +121,7 @@ class Ui_MainWindow(object):
         self.stop_button.setSizePolicy(sizePolicy)
         self.stop_button.setMaximumSize(QtCore.QSize(16777215, 999))
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setPointSize(13)
         self.stop_button.setFont(font)
         self.stop_button.setStyleSheet("QPushButton{color:red};")
         self.stop_button.setCheckable(False)
@@ -134,7 +133,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.motor_name = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(13)
         self.motor_name.setFont(font)
         self.motor_name.setAlignment(QtCore.Qt.AlignCenter)
         self.motor_name.setObjectName("motor_name")
@@ -153,7 +152,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.label_3)
         self.measured_velocity = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(13)
         self.measured_velocity.setFont(font)
         self.measured_velocity.setAlignment(QtCore.Qt.AlignCenter)
         self.measured_velocity.setObjectName("measured_velocity")
@@ -173,7 +172,7 @@ class Ui_MainWindow(object):
         self.set_velocity_label = QtWidgets.QLabel(self.gridLayoutWidget_2)
         self.set_velocity_label.setMaximumSize(QtCore.QSize(16777215, 99999))
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(13)
         self.set_velocity_label.setFont(font)
         self.set_velocity_label.setAlignment(QtCore.Qt.AlignCenter)
         self.set_velocity_label.setObjectName("set_velocity_label")
@@ -290,3 +289,4 @@ class Ui_MainWindow(object):
         self.vel_up_10.setText(_translate("MainWindow", "↑ (+10)"))
         self.vel_down.setText(_translate("MainWindow", "⇊ (-100)"))
         self.vel_down_10.setText(_translate("MainWindow", "↓ (-10)"))
+
