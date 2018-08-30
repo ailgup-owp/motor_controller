@@ -46,7 +46,8 @@ class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
       #Cannot read from device
       return "---"
     return str(spd)
-  def update_variables(self):
+  def update_variables(self,i2c_addr):
+    self.i2c_address=i2c_addr
     while (self.running):
        registers=[0x08,0x86,0x0D,0x01,0x80,0x81,0x82]
        labels=["mv","dc","mc","fw","kp","ki","kd"]
@@ -82,7 +83,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
 
  def open_var_win(self):
      self.var_win.running=True
-     var_loop = threading.Thread(target=self.var_win.update_variables,args=[])
+     var_loop = threading.Thread(target=self.var_win.update_variables,args=[devices[dev][0],])
      var_loop.start()
      self.var_win.showFullScreen()
  def button_handler(self):
@@ -101,6 +102,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           self.vel_down_10.setEnabled(True)
           self.forward_button.setText("Forward")
           self.reverse_button.setText("Reverse")
+          self.pushButton.setEnabled(True) #more stats
          else:
           self.vel_up.setEnabled(False)
           self.vel_down.setEnabled(False)
@@ -108,6 +110,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
           self.vel_down_10.setEnabled(False)
           self.forward_button.setText("Expulsion")
           self.reverse_button.setText("Ingestion")
+          self.pushButton.setEnabled(False) #more stats
          self.motor_name.setText(str(motor.split("_")[0]).upper())
          self.active_motor=motor
  def get_motor_name(self):
