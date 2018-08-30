@@ -35,7 +35,7 @@ class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
     self.close()
   def get_reg(self,command):
     try:
-      bus.write_i2c_block_data(self.i2c_address, command, [0])
+      bus.write_byte(self.i2c_address, command)
       e=bus.read_i2c_block_data(self.i2c_address, command, 4)
       if command>=0x80:
         (spd,)=struct.unpack('>f',bytearray(e))
