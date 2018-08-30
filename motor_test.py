@@ -52,7 +52,7 @@ class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
        labels=["mv","dc","mc","fw","kp","ki","kd"]
        for r in range(len(registers)):
             val=self.get_reg(registers[r])
-            if labels[r] == "fw" && val != "---":
+            if labels[r] == "fw" and val != "---":
               revision = (int(val) & 0xFFFFFFFC) >> 2;
               addStr=""
               revisionRange = (int(val) & 0x02) >> 1;
