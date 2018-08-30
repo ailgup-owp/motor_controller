@@ -196,7 +196,7 @@ Sensorless</string>
       <x>0</x>
       <y>33</y>
       <width>321</width>
-      <height>146</height>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -303,7 +303,7 @@ Sensorless</string>
         <widget class="QLabel" name="motor_name">
          <property name="font">
           <font>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="text">
@@ -325,7 +325,7 @@ Sensorless</string>
         <widget class="QLabel" name="label_3">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>8</pointsize>
           </font>
          </property>
          <property name="text">
@@ -340,7 +340,7 @@ Sensorless</string>
         <widget class="QLabel" name="measured_velocity">
          <property name="font">
           <font>
-           <pointsize>18</pointsize>
+           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="text">
@@ -365,7 +365,7 @@ Sensorless</string>
          </property>
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>8</pointsize>
           </font>
          </property>
          <property name="text">
@@ -386,7 +386,7 @@ Sensorless</string>
          </property>
          <property name="font">
           <font>
-           <pointsize>18</pointsize>
+           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="text">
@@ -394,6 +394,13 @@ Sensorless</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>More Stats</string>
          </property>
         </widget>
        </item>
@@ -537,8 +544,8 @@ Sensorless</string>
    <slot>down_velocity()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>244</x>
-     <y>378</y>
+     <x>157</x>
+     <y>159</y>
     </hint>
     <hint type="destinationlabel">
      <x>280</x>
@@ -553,8 +560,8 @@ Sensorless</string>
    <slot>set_motor_state()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>176</x>
-     <y>165</y>
+     <x>158</x>
+     <y>92</y>
     </hint>
     <hint type="destinationlabel">
      <x>213</x>
@@ -569,8 +576,8 @@ Sensorless</string>
    <slot>up_velocity()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>96</x>
-     <y>395</y>
+     <x>78</x>
+     <y>159</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
@@ -585,8 +592,8 @@ Sensorless</string>
    <slot>set_motor_state()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>20</x>
-     <y>102</y>
+     <x>22</x>
+     <y>62</y>
     </hint>
     <hint type="destinationlabel">
      <x>9</x>
@@ -601,8 +608,8 @@ Sensorless</string>
    <slot>set_motor_state()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>190</x>
-     <y>259</y>
+     <x>158</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
      <x>229</x>
@@ -633,8 +640,8 @@ Sensorless</string>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>327</x>
-     <y>18</y>
+     <x>191</x>
+     <y>23</y>
     </hint>
     <hint type="destinationlabel">
      <x>119</x>
@@ -649,8 +656,8 @@ Sensorless</string>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>17</y>
+     <x>319</x>
+     <y>22</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
@@ -665,8 +672,8 @@ Sensorless</string>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>20</y>
+     <x>255</x>
+     <y>25</y>
     </hint>
     <hint type="destinationlabel">
      <x>314</x>
@@ -681,8 +688,8 @@ Sensorless</string>
    <slot>button_handler()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>193</x>
-     <y>40</y>
+     <x>126</x>
+     <y>34</y>
     </hint>
     <hint type="destinationlabel">
      <x>333</x>
@@ -697,8 +704,8 @@ Sensorless</string>
    <slot>up_velocity_10()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>113</x>
-     <y>429</y>
+     <x>78</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
      <x>138</x>
@@ -713,12 +720,28 @@ Sensorless</string>
    <slot>down_velocity_10()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>215</x>
-     <y>422</y>
+     <x>157</x>
+     <y>193</y>
     </hint>
     <hint type="destinationlabel">
      <x>256</x>
      <y>460</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_var_win()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>213</y>
     </hint>
    </hints>
   </connection>
@@ -732,5 +755,6 @@ Sensorless</string>
   <slot>down_velocity()</slot>
   <slot>down_velocity_10()</slot>
   <slot>up_velocity_10()</slot>
+  <slot>open_var_win()</slot>
  </slots>
 </ui>
