@@ -20,6 +20,12 @@ Motor 3: Maxon Sensorless
 
 """
 
+devices={"falcon_button":[0x12],
+         "savox_button":[0x13],
+         "br_button":[0x30],
+         "br2_button":[0x32],
+         "maxon_button":[0x31]}
+
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(('8.8.8.8', 0))
@@ -83,7 +89,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
 
  def open_var_win(self):
      self.var_win.running=True
-     var_loop = threading.Thread(target=self.var_win.update_variables,args=[devices[dev][0],])
+     var_loop = threading.Thread(target=self.var_win.update_variables,args=(devices[self.active_motor][0],))
      var_loop.start()
      self.var_win.showFullScreen()
  def button_handler(self):
@@ -156,11 +162,7 @@ class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
 
  def send_i2c_command(self,dev,cmd):
      # name : [address,forward,reverse,off,set_vel]
-     devices={"falcon_button":[0x12],
-               "savox_button":[0x13],
-               "br_button":[0x30],
-               "br2_button":[0x32],
-               "maxon_button":[0x31]}
+
      commands={"go":0x04,"vel":0x07,"get_vel":0x08}
      on_bit = 0x1
      #if dev != "falcon_button" :
