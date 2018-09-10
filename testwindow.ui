@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>varWin</class>
- <widget class="QMainWindow" name="varWin">
+ <class>testWin</class>
+ <widget class="QMainWindow" name="testWin">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -36,9 +36,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
-      <width>319</width>
-      <height>181</height>
+      <y>10</y>
+      <width>311</width>
+      <height>182</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -48,8 +48,8 @@
      <property name="spacing">
       <number>2</number>
      </property>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_10">
+     <item row="4" column="2">
+      <widget class="QLabel" name="vl">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -62,7 +62,28 @@
         </font>
        </property>
        <property name="text">
-        <string>Duty Cycle</string>
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLabel" name="dp">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -70,7 +91,49 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLabel" name="mc">
+      <widget class="QLabel" name="cl">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLabel" name="dl">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="mv_3">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -83,15 +146,15 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Duty Cycle</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_12">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_10">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -100,11 +163,32 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>8</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Motor Velocity</string>
+        <string>Present</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Min</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -125,7 +209,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Current</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -142,11 +226,11 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>8</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>P,I,D</string>
+        <string>Average</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -163,48 +247,39 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>8</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>FW Revision</string>
+        <string>Max</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="1" column="0" colspan="3">
-      <widget class="Line" name="line">
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+     <item row="2" column="2">
+      <widget class="QLabel" name="vp">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
        </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
        </property>
-      </widget>
-     </item>
-     <item row="3" column="0" colspan="3">
-      <widget class="Line" name="line_5">
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+       <property name="text">
+        <string>-</string>
        </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0" colspan="3">
-      <widget class="Line" name="line_2">
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="7" column="0" colspan="3">
+     <item row="7" column="0" colspan="4">
       <widget class="Line" name="line_3">
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
@@ -214,28 +289,61 @@
        </property>
       </widget>
      </item>
+     <item row="3" column="0" colspan="4">
+      <widget class="Line" name="line_5">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="2">
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="mv_2">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>15</height>
+         <height>99999</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <pointsize>8</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>rpm</string>
+        <string>Velocity</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="5" column="0" colspan="3">
+     <item row="9" column="0" colspan="4">
+      <widget class="Line" name="line_2">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="4">
+      <widget class="Line" name="line">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="4">
       <widget class="Line" name="line_4">
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
@@ -245,8 +353,8 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="2">
-      <widget class="QLabel" name="label_17">
+     <item row="2" column="1">
+      <widget class="QLabel" name="cp">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -259,70 +367,7 @@
         </font>
        </property>
        <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="2">
-      <widget class="QLabel" name="label_18">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>15</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>mA</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="2">
-      <widget class="QLabel" name="label_15">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>15</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLabel" name="label_14">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>15</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>%</string>
+        <string>-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -332,62 +377,20 @@
      <item row="6" column="1">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="kp">
+        <widget class="QLabel" name="ca">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>99999</height>
+           <height>15</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>8</pointsize>
           </font>
          </property>
          <property name="text">
-          <string>TextLabel</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="ki">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>99999</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="kd">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>99999</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
+          <string>-</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -396,50 +399,33 @@
        </item>
       </layout>
      </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="dc">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>99999</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
+     <item row="11" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_15">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Time</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item row="8" column="1">
-      <widget class="QLabel" name="fw">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>99999</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="ch">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -452,30 +438,148 @@
         </font>
        </property>
        <property name="text">
-        <string>Measured Current</string>
+        <string>-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="9" column="0" colspan="2">
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QPushButton" name="test">
-         <property name="text">
-          <string>Test</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+     <item row="6" column="2">
+      <widget class="QLabel" name="va">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
      </item>
-     <item row="9" column="2">
-      <widget class="QPushButton" name="pushButton">
+     <item row="8" column="2">
+      <widget class="QLabel" name="vh">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="3">
+      <widget class="QLabel" name="dh">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QLabel" name="da">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="3">
+      <widget class="QPushButton" name="exit">
        <property name="text">
         <string>Exit</string>
        </property>
       </widget>
+     </item>
+     <item row="11" column="2">
+      <widget class="QPushButton" name="start">
+       <property name="text">
+        <string>START</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="time">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_6">
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
@@ -512,14 +616,14 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>exit</sender>
    <signal>clicked()</signal>
-   <receiver>varWin</receiver>
+   <receiver>testWin</receiver>
    <slot>exit_window()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>317</x>
-     <y>162</y>
+     <x>263</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
      <x>179</x>
@@ -528,18 +632,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>test</sender>
+   <sender>start</sender>
    <signal>clicked()</signal>
-   <receiver>varWin</receiver>
-   <slot>start_test()</slot>
+   <receiver>testWin</receiver>
+   <slot>start_stop_test()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>225</x>
-     <y>154</y>
+     <x>209</x>
+     <y>187</y>
     </hint>
     <hint type="destinationlabel">
-     <x>35</x>
-     <y>185</y>
+     <x>209</x>
+     <y>214</y>
     </hint>
    </hints>
   </connection>
@@ -554,6 +658,6 @@
   <slot>down_velocity_10()</slot>
   <slot>up_velocity_10()</slot>
   <slot>exit_window()</slot>
-  <slot>start_test()</slot>
+  <slot>start_stop_test()</slot>
  </slots>
 </ui>

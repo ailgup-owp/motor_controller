@@ -1,4 +1,4 @@
-import sys,time,threading,struct
+import sys,time,threading,struct,datetime
 import PyQt5
 try:
     import smbus
@@ -13,6 +13,7 @@ except:
   pass
 import mainwindow
 import variablewindow
+import testwindow
 """
 Motor 1: Blue Robotics 1
 Motor 2: Blue Robotics 2
@@ -30,12 +31,83 @@ def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(('8.8.8.8', 0))
     return str(s.getsockname()[0])
+class TestWindow(QMainWindow,testwindow.Ui_testWin):
+  def __init__(self):
+    super(self.__class__, self).__init__()
+    self.setupUi(self) # gets defined in the UI file
+    self.running=False
+    self.i2c_address=0x12
+    #vel, duty cycle, current
+    self.count=0
+    self.vals=[[sys.maxsize,0,0],[sys.maxsize,0,0],[sys.maxsize,0,0]]
+  def exit_window(self):
+    self.close()
+  def get_reg(self,command):
+    try:
+      bus.write_byte(self.i2c_address, command)
+      e=bus.read_i2c_block_data(self.i2c_address, command, 4)
+      if command>=0x80:
+        (spd,)=struct.unpack('>f',bytearray(e))
+        spd="{0:.4f}".format(spd,2)
+        spd=float(spd)
+      else:
+        (spd,)=struct.unpack('>l',bytearray(e))
+        spd=int(spd)
+    except OSError:
+      #Cannot read from device
+      return 0
+    return spd
+  def start_stop_test(self):
+    if self.running:
+      self.running=False
+      self.start.setText("START")
+      self.time.setText('00:00:00')
+      self.vals=[[sys.maxsize,0,0],[sys.maxsize,0,0],[sys.maxsize,0,0]]
+      post=["p","l","h","a"]
+      pre=["v","d","c"]
+      for v in pre:
+        for w in post:
+          eval("self.%s.setText('')" % (str(v+w)))
+    else:
+      self.running=True
+      self.start.setText("STOP")
+      test_loop = threading.Thread(target=self.test,args=())
+      test_loop.start()
+  def test(self):
+    test_length=9999999 #seconds
+    start_time=time.time()
+    while (time.time()-start_time < test_length and self.running):
+      vars=[0x08,0x86,0x0D]
+      labels=["v","d","c"]
+      for v in range(len(vars)):
+        val=self.get_reg(vars[v])
+        t=datetime.timedelta(seconds=(time.time()-start_time))
+        eval("self.time.setText('%s')" % (str(datetime.timedelta(seconds=t.seconds))))
+        eval("self.%s.setText('%s')" % (labels[v]+"p",str(val)))
+        if val < self.vals[v][0]:
+          self.vals[v][0] = val
+          eval("self.%s.setText('%s')" % (labels[v]+"l",str(val)))
+
+        elif val > self.vals[v][2]:
+          self.vals[v][2] = val
+          eval("self.%s.setText('%s')" % (labels[v]+"h",str(val)))
+          
+        self.count=self.count+1
+        self.vals[v][1] = ((self.vals[v][1] * (self.count-1))/self.count) + (val /self.count)
+        eval("self.%s.setText('%s')" % (labels[v]+"a",str(val)))
+      time.sleep(1)
+      
 class VariableWindow(QMainWindow,variablewindow.Ui_varWin):
   def __init__(self):
     super(self.__class__, self).__init__()
     self.setupUi(self) # gets defined in the UI file
     self.running=False
     self.i2c_address=0x12
+    self.test_win = TestWindow()
+  def start_test(self):
+    #test_loop = threading.Thread(target=self.test_win.update_variables,args=(devices[self.active_motor][0],))
+    #test_loop.start()
+    self.test_win.showFullScreen()
   def exit_window(self):
     self.running=False
     self.close()
