@@ -93,7 +93,7 @@ class TestWindow(QMainWindow,testwindow.Ui_testWin):
           eval("self.%s.setText('%s')" % (labels[v]+"h",str(val)))
           
         self.count=self.count+1
-        self.vals[v][1] = (self.vals[v][1] * (self.count-1)/self.count) + (val /self.count)
+        self.vals[v][1] = int((self.vals[v][1] * (self.count-1)/self.count) + (val /self.count))
         eval("self.%s.setText('%s')" % (labels[v]+"a",str(self.vals[v][1])))
       time.sleep(1)
       
