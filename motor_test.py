@@ -60,6 +60,7 @@ class TestWindow(QMainWindow,testwindow.Ui_testWin):
   def start_stop_test(self):
     if self.running:
       self.running=False
+      self.count=0
       self.start.setText("START")
       self.time.setText('00:00:00')
       self.vals=[[sys.maxsize,0,0],[sys.maxsize,0,0],[sys.maxsize,0,0]]
